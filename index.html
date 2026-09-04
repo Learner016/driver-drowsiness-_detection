@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Driver Drowsiness Detection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <h1>Driver Drowsiness Detection</h1>
+  <p class="sub">Face + Eye Aspect Ratio (EAR)</p>
+
+  <div class="videoBox">
+    <video id="video" autoplay muted playsinline></video>
+    <canvas id="canvas"></canvas>
+    <div id="message">Press <b>START CAMERA</b></div>
+  </div>
+
+  <div class="buttons">
+    <button id="start">START CAMERA</button>
+    <button id="recalibrate" disabled>RECALIBRATE</button>
+    <button id="stop" disabled>STOP</button>
+  </div>
+
+  <div id="status" class="status">READY</div>
+
+  <div class="result">
+    <div><small>FACE</small><b id="face">NO FACE</b></div>
+    <div><small>EYES</small><b id="eyes">NO FACE</b></div>
+    <div><small>CLOSED</small><b id="closed">0.00 s</b></div>
+    <div><small>ALERTS</small><b id="alerts">0</b></div>
+  </div>
+
+  <div class="ear">
+    <span>LEFT EAR: <b id="leftEar">--</b></span>
+    <span>RIGHT EAR: <b id="rightEar">--</b></span>
+    <span>THRESHOLD: <b id="threshold">--</b></span>
+  </div>
+
+  <p class="help">During the first few seconds, keep both eyes open for automatic calibration.</p>
+  <p class="error" id="error"></p>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
